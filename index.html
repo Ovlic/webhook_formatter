@@ -3,6 +3,7 @@
     <head>
         <script src="app.js"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="collapsible.css">
     </head>
     <body>
         <!--
@@ -13,7 +14,7 @@
             5. Files (8MB max)
             6. Embeds (10 embeds max)
         -->
-        <form id="whform" onsubmit="return false">
+        <form id="whform" class="form" onsubmit="return false">
             <label for="webhook">Webhook URL</label>
             <input type="text" name="webhookUrl" placeholder="https://discord.com/api/webhooks/..."><br>
             <label for="content">Content</label>
@@ -22,13 +23,13 @@
             <input type="text" name="username" placeholder="Username"><br>
             <label for="avatar">Avatar URL</label>
             <input type="text" name="avatarUrl" placeholder="Avatar URL"><br>
-            <label for="file">File</label>
-            <input type="file" name="file"><br>
+            <span>File</span>
+            <label for="file" class="filelabel">Upload File</label>
+            <input type="file" name="filehide" hidden><br><br>
+            <span for="embed">Embed</span>
             <div id="embeds">
-                <label for="embed">Embed</label>
-                <input type="text" name="embed" placeholder="Embed"><br>
-                <button id="addEmbed">Add Embed</button>
             </div>
+            <button id="addEmbed" class="btn">Add Embed</button>
         </form>
     </body>
 </html>

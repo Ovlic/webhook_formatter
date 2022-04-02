@@ -3,7 +3,7 @@ window.onload = function(){
         console.log("addEmbedButton clicked")
         var embeddiv = document.getElementById("embeds");
         var embed = document.createElement("div");
-        embed.className = "embed";
+        embeddiv.className = "embeddiv";
 
         var br = document.createElement("br");
         
@@ -138,5 +138,7 @@ window.onload = function(){
         embed.appendChild(br);
 
         embeddiv.appendChild(embed);
+        embeddiv.appendChild(br);
+        embeddiv.appendChild(br);
     });
 }

@@ -1,0 +1,103 @@
+input[type=text], .textbox{
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    /* margin: 0px 0; */
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-family: Consolas;
+    background-color: white;
+}
+input[type=text]:focus, .textbox:focus{
+    border: 3px solid #555;
+}
+.form {
+    padding: 12px 20px;
+    background-color: rgba(216, 192, 192, 0.432);
+}
+.filelabel {
+    background-color: indigo;
+    color: white;
+    padding: 0.75rem;
+    font-family: sans-serif;
+    border-radius: 20px;/*4.8px;*/
+    cursor: pointer;
+    margin-top: 16px;
+  }
+.btn {
+    padding: 0.75rem;
+    margin-top: 0rem;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    font-family: Arial;
+    border-color: transparent;
+    color: black;
+    /*position: relative;*/
+    border-radius: 20px;
+    word-wrap: none;
+    white-space: nowrap;
+    transition: background-color .125s linear;
+    transition: color .125s linear;
+    background-color:darkgoldenrod;
+    /*width: 125px;
+    height: 50px;*/
+    font-size: 16px;
+    text-align: center;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child-form {
+    flex: 1;
+    /* border: 2px solid yellow; */
+} 
+.flex-child-story {
+    flex: 1;
+    /* border: 2px solid yellow; */
+    background-color: rgb(82, 82, 82);
+    padding: 12px 20px;
+    font-size: 20px;
+    color: white;
+}
+.embeddiv {
+    flex: 1;
+    /* border: 2px solid yellow; */
+    background-color: rgb(82, 82, 82);
+    padding: 12px 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+.active, .collapsible:hover {
+    background-color: #ccc;
+  }
+ 
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
