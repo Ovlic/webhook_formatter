@@ -1,9 +1,28 @@
 window.onload = function(){
+
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    function numberToWords(num) {
+        if(num === 0) return capitalize('zero');
+        if(num === 1) return capitalize('one');
+        if(num === 2) return capitalize('two');
+        if(num === 3) return capitalize('three');
+        if(num === 4) return capitalize('four');
+        if(num === 5) return capitalize('five');
+        if(num === 6) return capitalize('six');
+        if(num === 7) return capitalize('seven');
+        if(num === 8) return capitalize('eight');
+        if(num === 9) return capitalize('nine');
+        if(num === 10) return capitalize('ten');
+    }
+
+    embedcount = 2;
     document.getElementById("addEmbed").addEventListener("click", function(){
         console.log("addEmbedButton clicked")
-        var embeddiv = document.getElementById("embeds");
-        var embed = document.createElement("div");
-        embeddiv.className = "embeddiv";
+        var embeddiv = document.getElementById("accordion");
+        //var embed = document.createElement("div");
+        //embeddiv.className = "embeddiv";
 
         var br = document.createElement("br");
         
@@ -126,6 +145,53 @@ window.onload = function(){
         footer.appendChild(br);
 
 
+        /*
+         <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+               <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Collapsible Group Item #3
+                  </a>
+               </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+               <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+               </div>
+            </div>
+         </div>
+        */
+        var panel_default = document.createElement("div");
+        panel_default.className = "panel panel-default";
+
+        var panel_heading = document.createElement("div");
+        panel_heading.className = "panel-heading";
+        panel_heading.role = "tab";
+        panel_heading.id = "heading"+numberToWords(embedcount);
+
+        var panel_title = document.createElement("h4");
+        panel_title.className = "panel-title";
+
+        var panel_title_a = document.createElement("a");
+        panel_title_a.role = "button";
+        $(panel_title_a).attr("data-toggle", "collapse");
+        //panel_title_a.data_toggle = "collapse";
+        $(panel_title_a).attr("data-parent", "#accordion");
+        panel_title_a.href = "#collapse"+numberToWords(embedcount);
+        $(panel_title_a).attr("aria-expanded", "false");
+        $(panel_title_a).attr("aria-controls", "collapse"+numberToWords(embedcount));
+        panel_title_a.className = "collapsed";
+        panel_title_a.innerHTML = "Embed "+numberToWords(embedcount);
+
+        var panel_collapse = document.createElement("div");
+        panel_collapse.id = "collapse"+numberToWords(embedcount);
+        panel_collapse.className = "panel-collapse collapse";
+        panel_collapse.role = "tabpanel";
+        $(panel_collapse).attr("aria-labelledby", "heading"+numberToWords(embedcount));
+
+        var embed = document.createElement("div");
+        embed.className = "panel-body";
+
         embed.appendChild(author);
         embed.appendChild(br);
         embed.appendChild(body);
@@ -137,8 +203,15 @@ window.onload = function(){
         embed.appendChild(footer);
         embed.appendChild(br);
 
-        embeddiv.appendChild(embed);
-        embeddiv.appendChild(br);
-        embeddiv.appendChild(br);
+        panel_title.appendChild(panel_title_a);
+        panel_heading.appendChild(panel_title);
+        panel_default.appendChild(panel_heading);
+        panel_collapse.innerHTML="Hiiiii"
+        //panel_collapse.appendChild(embed);
+        panel_default.appendChild(panel_collapse);
+
+        embeddiv.appendChild(panel_default);
+
+        embedcount += 1;
     });
 }
