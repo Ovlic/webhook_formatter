@@ -1,27 +1,24 @@
 embedcount = 2;
 
 function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
- }
- function numberToWords(num) {
-    if(num === 0) return capitalize('zero');
-    if(num === 1) return capitalize('one');
-    if(num === 2) return capitalize('two');
-    if(num === 3) return capitalize('three');
-    if(num === 4) return capitalize('four');
-    if(num === 5) return capitalize('five');
-    if(num === 6) return capitalize('six');
-    if(num === 7) return capitalize('seven');
-    if(num === 8) return capitalize('eight');
-    if(num === 9) return capitalize('nine');
-    if(num === 10) return capitalize('ten');
- }
+   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+function numberToWords(num) {
+   if(num === 0) return capitalize('zero');
+   if(num === 1) return capitalize('one');
+   if(num === 2) return capitalize('two');
+   if(num === 3) return capitalize('three');
+   if(num === 4) return capitalize('four');
+   if(num === 5) return capitalize('five');
+   if(num === 6) return capitalize('six');
+   if(num === 7) return capitalize('seven');
+   if(num === 8) return capitalize('eight');
+   if(num === 9) return capitalize('nine');
+   if(num === 10) return capitalize('ten');
+}
 
 function createEmbed(){
-    var embeddiv = document.getElementById("accordion");
-      //var embed = document.createElement("div");
-      //embeddiv.className = "embeddiv";
-
+      var embeddiv = document.getElementById("accordion");
       var br = document.createElement("br");
       
       var author = document.createElement("div");
