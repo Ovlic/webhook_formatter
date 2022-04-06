@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-        <script src="app.js"></script>
-        <script src="collapsible.js"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="collapsible.css">
-        <link rel="stylesheet" href="otherstyle.css">
+        <script src="app.js"></script>
+        <script src="embeds.js"></script>
+        <script src="collapsible.js"></script>
+        <script>
+            function reload_js(src) {
+                $('script[src="' + src + '"]').remove();
+                $('<script>').attr('src', src).appendTo('head');
+            }
+        </script>
     </head>
     <body>
         <!--
@@ -19,48 +27,44 @@
         -->
 
         <div class="flex-container">
-         <div class="flex-child-form">
-             <form class="form" id="whform" onsubmit="return false">
-               <label for="webhook">Webhook URL</label>
-            <input type="text" name="webhookUrl" placeholder="https://discord.com/api/webhooks/..."><br>
-            <label for="content">Content</label>
-            <input type="text" name="content" placeholder="Content"><br>
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="Username"><br>
-            <label for="avatar">Avatar URL</label>
-            <input type="text" name="avatarUrl" placeholder="Avatar URL"><br>
-            <!--<span>File</span>
-            <label for="file" class="filelabel">Upload File</label>
-            <input type="file" name="filehide" hidden><br><br>
-            -->
-            <span for="embed">Embed</span>
-            <div class="wrapper center-block">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                   <div class="panel panel-default">
-                      <div class="panel-heading active" role="tab" id="headingOne">
-                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Collapsible Group Item #1
-                            </a>
-                         </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            Hellooooo
+            <div class="flex-child-form">
+                <form class="form" id="whform" onsubmit="return false">
+                    <label for="webhook">Webhook URL</label>
+                    <input type="text" name="webhookUrl" placeholder="https://discord.com/api/webhooks/..."><br>
+                    <label for="content">Content</label>
+                    <input type="text" name="content" placeholder="Content"><br>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username"><br>
+                    <label for="avatar">Avatar URL</label>
+                    <input type="text" name="avatarUrl" placeholder="Avatar URL"><br>
+                    <!--<span>File</span>
+                    <label for="file" class="filelabel">Upload File</label>
+                    <input type="file" name="filehide" hidden><br><br>
+                    -->
+                    <span for="embed">Embed</span>
+                    <div class="wrapper center-block">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading active" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Collapsible Group Item #1
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Hellooooo
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-            <button id="addEmbed" class="btn">Add Embed</button>
-        </form>
-             </form>
-         </div>
-         <div class="flex-child-story" id="story">
-
-        <!--<form id="whform" class="form" onsubmit="return false"> <!--class="form"-->
+                    </div>
+                    <button id="addEmbed" class="btn">Add Embed</button>
             
-        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script><script  src="collapsible.js"></script>
+                </form>
+            </div>
+            <div class="flex-child-story" id="story"></div>
+        </div>
     </body>
 </html>
